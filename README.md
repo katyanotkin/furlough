@@ -1,4 +1,4 @@
 # 2017-07-20
-# eductaional competitive enteratinment
+# education through entertainment
 # 
 #
