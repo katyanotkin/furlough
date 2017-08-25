@@ -1,0 +1,8 @@
+{
+    "devQuiz": {
+        "app_function": "lambda_get.app", 
+        "aws_region": "us-east-1", 
+        "profile_name": "default", 
+        "s3_bucket": "S3Quiz"
+    }
+}
