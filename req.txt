@@ -5,3 +5,4 @@ pymongo
 zappa
 flask_jsonpify
 requests
+mongoengine

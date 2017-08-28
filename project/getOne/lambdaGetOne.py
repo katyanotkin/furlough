@@ -25,10 +25,10 @@ def get(collection='questions'):
 	
 	try:
                 # Convert from string to ObjectId:
-                #return "{'OK'}"
-                return jsonify(db[collection].find_one({"_id": ObjectId(request.args.get('_id'))}, {"_id": False,'clientId':False}))
+		print (request.args.get('boo'))
+		return jsonify(db[collection].find_one({"_id": ObjectId(request.args.get('_id'))}, {'_id':False,'clientId':False}))
 	except:
-                return "{'STATUS':'FAILED'}"
+		return "{'STATUS':'FAILED'}"
 
 
 # We only need this for local development.
