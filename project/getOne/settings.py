@@ -1,7 +1,7 @@
 import sys
 import getpass
 
-CFG='/home/'+getpass.getuser()+'/furlough/config'
+CFG='/home/'+getpass.getuser()+'/furlough/project/config'
 #print (CFG)
 sys.path.append(CFG)
 
