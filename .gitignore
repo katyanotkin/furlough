@@ -43,10 +43,5 @@ local_settings.py
 # Python virtual env
 envv
 envv/
-scripts/envv/*
-scripts/envv/lib/
-
-
-scripts/req.txt
 
 

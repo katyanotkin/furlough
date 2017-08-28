@@ -5,8 +5,8 @@ import pymongo
 from pymongo import MongoClient
 from bson import ObjectId
 from flask import request
-import local_settings
-from local_settings import DB_AUTH
+import settings
+from settings import DB_AUTH
  
 app = Flask(__name__)
 qurl="/quiz/collection=<collection>"
@@ -25,8 +25,8 @@ def get(collection='questions'):
 	
 	try:
                 # Convert from string to ObjectId:
-                #return "{'OK'}"
-                return jsonify(db[collection].find_one({"_id": ObjectId(request.args.get('_id'))}, {"_id": False,'clientId':False}))
+		print (request.args.get('boo'))
+                return jsonify(db[collection].find_one({"_id": ObjectId(request.args.get('_id'))}, {'_id':False,'clientId':False}))
 	except:
                 return "{'STATUS':'FAILED'}"
 
