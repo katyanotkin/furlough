@@ -1,0 +1,8 @@
+{
+    "dev": {
+        "app_function": "lambdaDeleteOne.app",
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "s3_bucket": "zappa-p7lf5f7jb"
+    }
+}
