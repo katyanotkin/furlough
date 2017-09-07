@@ -10,19 +10,13 @@ import local_settings
 from local_settings import DB_AUTH
 import settings
 #from settings import DB_AUTH
-import dbConnection 
+#import dbConnection 
 """
 try:
 	from dbConnection import dbConn  
 except ImportError:
 	print ("dbConnection.py not found") 
 """
-try:
-                connection = MongoClient(DB_AUTH['MONGO_HOST'], DB_AUTH['MONGO_PORT'])
-                db = connection[DB_AUTH['MONGO_DB']]
-                db.authenticate(DB_AUTH['MONGO_USER'], DB_AUTH['MONGO_PASS'])
-except:
-                print ("Unexpected db connection/auth error:", sys.exc_info()[0])
 
 class JSONEncoder(json.JSONEncoder):
     def default(self, o):
@@ -36,6 +30,15 @@ print (qurl)
 @q.route(qurl)
 
 def get(collection):
+
+	try:
+                connection = MongoClient(DB_AUTH['MONGO_HOST'], DB_AUTH['MONGO_PORT'])
+                db = connection[DB_AUTH['MONGO_DB']]
+                db.authenticate(DB_AUTH['MONGO_USER'], DB_AUTH['MONGO_PASS'])
+	except:
+		errorMsg=sys.exc_info()[0]
+		print ("Unexpected db connection/auth error:", sys.exc_info()[0])
+		return (errorMsg)
 	#print ("dbConn {}".format(dbConn))
 	#db=dbConn()	
 	#print (list(db['appUsers'].find()))
@@ -44,13 +47,13 @@ def get(collection):
 	if checkColl==0:
 		return '{"ERROR":"Invalid or empty collection"}' 
 	if not ObjectId.is_valid(request.args.get('_id')):
-		return '{"ERROR":"Invalid _id"}'
+		return '{"ERROR":"Invalid ObjectId"}'
 	print (db[collection].find_one({"_id": ObjectId(request.args.get('_id'))}))
 	try:
-		return JSONEncoder().encode(db[collection].find_one({"_id": ObjectId(request.args.get('_id'))}, {'_id':False,'clientId':False}))
+		return JSONEncoder().encode(db[collection].find_one({"_id": ObjectId(request.args.get('_id'))}))
 	except:
 		print ("ERROR: {}".format(sys.exc_info()[1]))
-		return ("6666")
+		return ({"ERROR":"6666"})
 
 # We only need this for local development.
 if __name__ == '__main__':
