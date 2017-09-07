@@ -9,7 +9,7 @@ from flask import (request, make_response)
 from datetime import datetime
 import json
 import settings
-from settings import DB_AUTH
+#from settings import DB_AUTH
 import dbConnection 
 try:
 	from dbConnection import dbConn 
@@ -40,6 +40,7 @@ def postOne(collection='questions'):
 		abort(400)
 	else:
 		data_json=request.json
+		print("post1:", data_json) 
 		data_json["dateCreated"]=datetime.utcnow().isoformat(timespec='microseconds')
 	if collection=='appUsers':
 		data_json["status"]='Pending'
@@ -48,7 +49,7 @@ def postOne(collection='questions'):
 
 
 	post_id = db[collection].insert_one(data_json)
-	print("id", str(post_id))
+	print('_id {}'.format(post_id))
 	return (str(post_id.inserted_id))
 
 # We only need this for local development.

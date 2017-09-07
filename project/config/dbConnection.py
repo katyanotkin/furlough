@@ -1,8 +1,9 @@
 import sys
 import pymongo
 from pymongo import MongoClient
-from . import settings 
-from settings import DB_AUTH
+#from . import settings 
+#import settings
+#from settings import DB_AUTH
 
 
 def dbConn():
