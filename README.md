@@ -28,8 +28,24 @@ Part 1 - mostly manual
 While executing `setupEnv` script below answer positively to all prompts (<ENTER>, "yes", "Y"); 
 > $ ./setupEnv.sh 
 
+If you prefer to set up environment manually, have Python 3.5 installed, check out repository from github into $HOME. 
+```
+> $ REPO=$HOME/furlough
+> $ cd ${REPO}
 
-3) Activate virtual env, run tests and observe results of testing 
+> $ virtualenv --python=python3.5 env
+> $ source env/bin/activate
+> $ pip install -r requirements.txt
+```
+
+
+3) EXECUTE: Activate virtual env, run python script 
+
+> $ source ${REPO}/env/bin/activate
+
+> $ env/bin/python src/emailFinder.py [input] 
+
+4) TEST (new and regression testing): Activate virtual env, run tests and observe results of testing (mock test for now)
 
 > $ source ${REPO}/env/bin/activate
 
