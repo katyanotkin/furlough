@@ -30,12 +30,12 @@ While executing `setupEnv` script below answer positively to all prompts (<ENTER
 
 If you prefer to set up environment manually, have Python 3.5 installed, check out repository from github into $HOME. 
 ```
-> $ REPO=$HOME/furlough
-> $ cd ${REPO}
+ $ REPO=$HOME/furlough
+ $ cd ${REPO}
 
-> $ virtualenv --python=python3.5 env
-> $ source env/bin/activate
-> $ pip install -r requirements.txt
+ $ virtualenv --python=python3.5 env
+ $ source env/bin/activate
+ $ pip install -r requirements.txt
 ```
 
 
