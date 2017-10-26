@@ -1,0 +1,18 @@
+
+USAGE:
+
+> python emailFinder.py <website>
+
+> python find_email_addresses.py web.mit.edu
+
+OUTPUT EXAMPLE:
+```
+Found these email addresses:
+campus-map@mit.edu
+mitgrad@mit.edu
+sfs@mit.edu
+llwebmaster@ll.mit.edu
+webmaster@ll.mit.edu
+whatsonyourmind@mit.edu
+fac-officers@mit.edu
+```
