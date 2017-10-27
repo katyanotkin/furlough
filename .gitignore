@@ -1,9 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
-# C extensions
-*.so
+.cache
 
 # Distribution / packaging
 bin/
@@ -25,11 +23,6 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
 
 # Translations
 *.mo
@@ -41,7 +34,6 @@ coverage.xml
 
 local_settings.py
 # Python virtual env
-envv
-envv/
+env
 
 
