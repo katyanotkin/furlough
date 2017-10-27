@@ -10,9 +10,9 @@ email_pattern = re.compile("[\w\.-]+@[\w\.-]+")
 
 
 def findObjects(rootUrl):
-		processed_urls=set()
-		emails=set()
-		urls=deque([rootUrl])
+		processed_urls=set()	# unique items
+		emails=set()		# unique items
+		urls=deque([rootUrl])	# good FIFO
 		# obtain urls beyond root 
 		while len(urls):
 			urlnext=urls.popleft()

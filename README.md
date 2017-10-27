@@ -43,7 +43,7 @@ If you prefer to set up environment manually, have Python 3.5 installed, check o
 
 > $ source ${REPO}/env/bin/activate
 
-> $ env/bin/python src/emailFinder.py [input] 
+> $ env/bin/python src/find_email_addresses.py [input] 
 
 4) TEST (new and regression testing): Activate virtual env, run tests and observe results of testing (mock test for now)
 
